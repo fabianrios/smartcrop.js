@@ -45,7 +45,7 @@ $.getJSON('images/images.json', function(images) {
           $('#perf').text('processed ' + totalCrops + ' images, ' +
             Math.round(totalTime * 1000 / totalCrops) + ' ms/image, ' +
             Math.round(100 * totalmpix / totalTime) / 100 + ' mega pixel/s');
-          // console.log(img.src, result);
+          console.log(img.src, result);
           var crop = result.topCrop;
           var canvas = $('<canvas>')[0];
           var ctx = canvas.getContext('2d');
