@@ -46,6 +46,7 @@ smartcrop.DEFAULTS = {
   skinBrightnessMax: 1.0,
   skinThreshold: 0.8,
   skinWeight: 1.8,
+  skinDetection: true,
   saturationBrightnessMin: 0.05,
   saturationBrightnessMax: 0.9,
   saturationThreshold: 0.4,
@@ -355,7 +356,7 @@ function analyse(options, input) {
   var output = new ImgData(input.width, input.height);
 
   edgeDetect(input, output);
-  skinDetect(options, input, output);
+  if (options.skinDetection) skinDetect(options, input, output);
   saturationDetect(options, input, output);
   applyBoosts(options, output);
 
